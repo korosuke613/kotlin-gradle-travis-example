@@ -9,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1"
     }
 }
 
@@ -37,11 +36,6 @@ compileTestKotlin {
 apply plugin: 'application'
 mainClassName='HelloWorldKt'
 
-apply plugin: "com.github.kt3k.coveralls"
-
-coveralls {
-    sourceDirs = files(sourceSets.main.allSource.srcDirs).files.absolutePath
-}
 
 apply plugin: "jacoco"
 
